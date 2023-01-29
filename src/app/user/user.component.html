@@ -1,0 +1,26 @@
+
+<table>
+    <tr>
+    <th>username</th>
+    <td>{{u.username}}</td>
+    </tr>   
+    <tr>
+        <th>name</th>
+        <td>{{u.name}}</td>
+    </tr>
+    <tr>
+        <th>city</th>
+        <td>{{u.address.city}}</td>
+    </tr>   
+</table>
+<div>
+    <ul class="nav nav-tab">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="address">Address </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="company">Company</a>
+        </li>
+    </ul>
+</div>
+<router-outlet></router-outlet>

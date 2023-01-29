@@ -1,0 +1,55 @@
+<div>
+    <h4>angular11</h4>
+  </div>
+
+<p>Interpolation</p>
+<h4>{{title}}</h4>
+<img src="{{imageUrl}}" alt="image missing" style="width:82px;height:82px;">
+<button disabled="{{flag}}">Click Me</button>
+
+<p>Property Binding</p>
+<img [src]="imageUrl" style="width:82px;height:82px;"/>
+<button [disabled]="flag">Click Me</button>
+
+<p>Event Binding</p>
+<button (click)="changeTitle()">Change Title</button>
+
+<p>Two way data binding</p>
+<input type="text" [(ngModel)]="username"/>
+
+<p>Welcome {{username}}</p>
+
+
+<ul>
+    <li *ngFor="let user of users1">{{user}}</li>
+</ul>
+
+<h1 class="text-center">pipes in angular | titlecase </h1>
+<table class="table table-bordered">
+    <tr class="bg-primary">
+        <th>Id</th>
+        <th>name</th>
+        <th>city</th>
+        <th>DOB</th>
+        <th>Age</th>
+    </tr>
+    <tr *ngFor="let user of users2">
+        <td>{{user.id}}</td>
+        <td> {{user.name | uppercase |titlecase }}</td>
+        <td>{{user.address.city}}</td>
+        <td>{{user.dob | date:'dd/MM/yy'}}</td>
+        <td>{{user.dob | age}}</td>
+    </tr>
+</table>
+
+
+
+<h1 class="text-center">NgIf structual Directive</h1>
+
+<div *ngIf="isUserLoggedIn; else logout">
+    <h3>welcome to user login</h3>
+</div>
+
+<ng-template #logout>
+    <p>You are not logged in</p>
+</ng-template>

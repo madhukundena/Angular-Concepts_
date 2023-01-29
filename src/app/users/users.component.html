@@ -1,0 +1,18 @@
+<h1 style="text-align:center">User Dashboard</h1>
+<button routerLink="/addUser">add user</button>
+<table class="table table-bordered">
+    <tr class="bg-primary">
+        <th>Id</th>
+        <th>name</th>
+        <th>city</th>
+        <th>DOB</th>
+        <th>Age</th>
+    </tr>
+    <tr *ngFor="let user of users2">
+        <td><a [routerLink]="['/user',user.id]">{{user.id}}</a></td>
+        <td> {{user.name | uppercase |titlecase }}</td>
+        <td>{{user.address.city}}</td>
+        <td>{{user.dob | date:'dd/MM/yy'}}</td>
+        <td>{{user.dob | age}}</td>
+    </tr>
+</table>
